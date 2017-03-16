@@ -20,7 +20,7 @@
     <PackageReference Include="AutoMapper" Version="5.2.0" />
     <PackageReference Include="Cmas.Backend.Infrastructure.Domain" Version="1.*" />
     <PackageReference Include="Cmas.Backend.Modules.CallOffOrders" Version="1.*" />
-    <PackageReference Include="couch_client.backend" Version="1.0.3" />
+    <PackageReference Include="couch_client.backend" Version="1.*" />
     <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="1.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
