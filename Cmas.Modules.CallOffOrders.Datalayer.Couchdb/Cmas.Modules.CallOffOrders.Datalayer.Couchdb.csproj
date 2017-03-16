@@ -7,7 +7,7 @@
     <ApplicationIcon />
     <OutputTypeEx>library</OutputTypeEx>
     <StartupObject />
-    <Version>1.0.3</Version>
+    <Version>1.1.0</Version>
     <Authors>Yamal</Authors>
     <Company>Yamal</Company>
     <Product>CMAS</Product>
@@ -18,9 +18,9 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="5.2.0" />
-    <PackageReference Include="Cmas.Backend.Infrastructure.Domain" Version="1.*" />
-    <PackageReference Include="Cmas.Backend.Modules.CallOffOrders" Version="1.*" />
-    <PackageReference Include="couch_client.backend" Version="1.*" />
+    <PackageReference Include="Cmas.Backend.Infrastructure.Domain" Version="1.1.0" />
+    <PackageReference Include="Cmas.Backend.Modules.CallOffOrders" Version="1.1.0" />
+    <PackageReference Include="couch_client.backend" Version="1.0.3" />
     <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="1.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
