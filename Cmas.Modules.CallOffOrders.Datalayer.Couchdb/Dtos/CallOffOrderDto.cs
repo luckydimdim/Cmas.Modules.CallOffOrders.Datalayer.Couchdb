@@ -1,4 +1,4 @@
-﻿using Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Dtos.Remuneration;
+﻿using Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Dtos;
 using System;
 using System.Collections.Generic;
 
@@ -12,7 +12,12 @@ namespace Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Dtos
         /// <summary>
         /// Уникальный внутренний идентификатор
         /// </summary>
-        public String Id;
+        public String _id;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public String _rev;
 
         /// <summary>
         /// Идентификатор договора
@@ -40,13 +45,15 @@ namespace Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Dtos
         public String Name;
 
         /// <summary>
-        /// Вознаграждения
+        /// Ставки
         /// </summary>
-        public ICollection<BaseRemunerationDto> Remunerations;
+        public ICollection<RateDto> Rates;
+        public ICollection<RateGroupDto> RateGroups;
 
         public CallOffOrderDto()
         {
-            Remunerations = new List<BaseRemunerationDto>();
+            Rates = new List<RateDto>();
+            RateGroups = new List<RateGroupDto>();
         }
 
         public String Status;

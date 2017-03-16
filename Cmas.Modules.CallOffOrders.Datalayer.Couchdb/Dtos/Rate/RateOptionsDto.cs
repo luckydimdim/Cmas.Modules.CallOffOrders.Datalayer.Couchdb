@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Dtos.Remuneration
+namespace Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Dtos
 {
     public class RateOptionsDto
     {
