@@ -45,9 +45,11 @@ namespace Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Queries
 
  
                 foreach (var row in viewResult.Rows)
-                { 
- 
-                    result.Add(AutoMapper.Mapper.Map<CallOffOrder>(row.Value));
+                {
+
+                    var order = AutoMapper.Mapper.Map<CallOffOrder>(row.Value);
+                    order.Id = row.Value._id;
+                    result.Add(order);
                 }
 
                 return result;

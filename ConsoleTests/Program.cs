@@ -1,6 +1,7 @@
 ﻿using Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Commands;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Dtos;
 using Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Queries; 
@@ -16,13 +17,15 @@ namespace ConsoleTests
         {
             try
             {
-                string id = CreateCallOffOrderCommand().Result;
+
+                AllTest().Wait();
+                /*string id = CreateCallOffOrderCommand().Result;
                
                 UpdateCallOffOrderCommand(id).Wait();
 
-                var res = FindByIdQueryTest(id).Result;
+                var res = FindByIdQueryTest(id).Result;*/
 
-                DeleteCallOffOrderCommand(id).Wait();
+                //DeleteCallOffOrderCommand(id).Wait();
 
             }
             catch (Exception e)
@@ -120,6 +123,25 @@ namespace ConsoleTests
             return true;
         }
 
+        static async Task<bool> AllTest()
+        {
+            AllEntitiesQuery query = new AllEntitiesQuery();
+            AllEntities criterion = new AllEntities();
+            IEnumerable<CallOffOrder> result = null;
 
+            try
+            {
+                result = await query.Ask(criterion);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+
+            Console.WriteLine(result.Count());
+
+            return true;
+        }
     }
 }
