@@ -10,7 +10,6 @@ using Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Serialization;
 using Newtonsoft.Json;
 using System.Reflection;
 using Cmas.Backend.Modules.CallOffOrders.Entities;
-using Cmas.Backend.Modules.CallOffOrders.Entities.Rates;
 
 namespace Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Queries
 {
@@ -23,7 +22,6 @@ namespace Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Queries
                 AutoMapper.Mapper.Initialize(cfg => {
                     cfg.CreateMap<CallOffOrderDto, CallOffOrder >();
                     cfg.CreateMap<RateDto,Rate >();
-                    cfg.CreateMap<RateOptionsDto, RateOptions>();
                 });
              
         }

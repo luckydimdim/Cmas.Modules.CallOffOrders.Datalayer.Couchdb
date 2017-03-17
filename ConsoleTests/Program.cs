@@ -6,7 +6,6 @@ using Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Dtos;
 using Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Queries; 
 using Cmas.Backend.Modules.CallOffOrders.CommandsContexts;
 using Cmas.Backend.Modules.CallOffOrders.Entities;
-using Cmas.Backend.Modules.CallOffOrders.Entities.Rates;
 using Cmas.Backend.Infrastructure.Domain.Criteria;
 
 namespace ConsoleTests
@@ -91,39 +90,29 @@ namespace ConsoleTests
             order.Name = "Заказег";
             order.Number = "123/sdhgf";
 
-            order.RateGroups = new List<RateGroup>();
+            {
+                var rate = new Rate();
+                rate.Id = 1;
+                rate.Name = "Услуга";
+ 
+                order.Rates.Add(rate);
+            }
 
-            var rate = new Rate();
-            rate.Id = 1;
-            rate.Name = "Отпуск";
-            rate.RateOptions = new RateOptions { Currency = "RUR", Rate = 1000, RemunerationUnit = "День" };
+            {
+                var rate = new Rate();
+                rate.Id = 2;
+                rate.Name = "Выходные";
+                rate.Amount = 1000;
+                rate.Currency = "RUR";
+                rate.UnitName = "дн.";
+                rate.IsRate = true;
 
-            order.Rates.Add(rate);
+                order.Rates.Add(rate);
+            }
 
             commandContext.Form = order;
 
-            /*
-            var simple1 = new RateDto();
-            simple1.Id = 1;
-            simple1.Name = "Отпуск";
-            simple1.RateOptions = new RateOptionsDto { Currency = "RUR", Rate = 1000, RemunerationUnit = "День" };
-
-
-            var simple2 = new RateDto();
-            simple2.Id = 1;
-            simple2.Name = "Отпуск";
-            simple2.RateOptions = new RateOptionsDto { Currency = "RUR", Rate = 1000, RemunerationUnit = "День" };
-
-
-            var complex = new ComplexRemunerationDto();
-            complex.Id = 2;
-            complex.Name = "сложный";
-
-            complex.Remunerations.Add(simple1);
-            complex.Remunerations.Add(simple2);
-
-            dto.Remunerations.Add(complex);
-            */
+           
 
 
             var result = await command.Execute(commandContext);

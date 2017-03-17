@@ -1,7 +1,6 @@
 ﻿using Cmas.Backend.Infrastructure.Domain.Commands;
 using Cmas.Backend.Modules.CallOffOrders.CommandsContexts;
 using Cmas.Backend.Modules.CallOffOrders.Entities;
-using Cmas.Backend.Modules.CallOffOrders.Entities.Rates;
 using Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Dtos;
 using MyCouch;
 using System;
@@ -19,7 +18,6 @@ namespace Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Commands
             AutoMapper.Mapper.Initialize(cfg => {
                 cfg.CreateMap<CallOffOrder, CallOffOrderDto>();
                 cfg.CreateMap<Rate, RateDto>();
-                cfg.CreateMap<RateOptions, RateOptionsDto>();
             });
         }
  

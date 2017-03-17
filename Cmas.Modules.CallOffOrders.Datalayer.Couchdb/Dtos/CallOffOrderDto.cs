@@ -48,12 +48,10 @@ namespace Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Dtos
         /// Ставки
         /// </summary>
         public ICollection<RateDto> Rates;
-        public ICollection<RateGroupDto> RateGroups;
 
         public CallOffOrderDto()
         {
             Rates = new List<RateDto>();
-            RateGroups = new List<RateGroupDto>();
         }
 
         public String Status;

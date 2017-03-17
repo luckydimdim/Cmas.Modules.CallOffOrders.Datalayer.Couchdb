@@ -2,12 +2,18 @@
 
 namespace Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Dtos
 {
-    public class RateOptionsDto
+    public class RateDto
     {
+        public int Id;
+
+        public String Name;
+
+        public bool IsRate;
+
         /// <summary>
         /// Ставка
         /// </summary>
-        public double Rate;
+        public double Amount;
 
         /// <summary>
         /// Валюта
@@ -17,7 +23,7 @@ namespace Cmas.Modules.CallOffOrders.Datalayer.Couchdb.Dtos
         /// <summary>
         /// Ед. изм.
         /// </summary>
-        public String RemunerationUnit;
+        public String UnitName;
 
     }
 }
